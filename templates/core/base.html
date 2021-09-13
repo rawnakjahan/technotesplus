@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TechNote</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}core/css/datatable.min.css">
+
+    <!— Page CSS —>
+
+    {% block css %}{% endblock %}
+
+    <!— Common CSS-->
+    <link rel="stylesheet" href="{{ STATIC_URL }}core/css/font-awesome.min.css">
+    <link href="{{ STATIC_URL }}core/css/common.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}core/css/common.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}core/css/daterangepicker.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}core/css/shadow.css" rel="stylesheet">
+
+    <style>
+    .login-content {
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: white;
+    }
+
+        {#::-webkit-scrollbar {#}
+        {#    display: none;#}
+        {# } #}
+        .lcb-form {
+            box-shadow: 0 0px 2px #67bd6a;
+        }
+
+        .lc-block:not(.lc-block-alt) .btn-login {
+            top: 59%;
+        }
+
+        .dt-buttons {
+            padding-left: 30px;
+            padding-top: 5px;
+        }
+
+        body {
+            background-position: center;
+            background-size: cover;
+        }
+
+        {# date picker#}
+        .bootstrap-datetimepicker-widget.dropdown-menu {
+            top: 35px!important;
+        }
+
+        .date-time-picker + .bootstrap-datetimepicker-widget.dropdown-menu{
+            top: 50px!important;
+        }
+        {# /date picker#}
+    </style>
+
+</head>
+
+<body>
+
+<!— Render content —>
+{% block content %}
+
+{% endblock %}
+
+
+<!— Common JS —>
+<script src="{{ STATIC_URL }}core/js/common.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}core/js/datatable.min.js"></script>
+
+<!— Page JS —>
+<script>
+    var userId = "{{ request.user.id }}";
+</script>
+
+
+{% block js %}{% endblock %}
+
+<script src="{{ STATIC_URL }}core/js/theme_app.min.js"></script>
+
+
+</body>
+</html>

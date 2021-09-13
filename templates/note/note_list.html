@@ -1,0 +1,44 @@
+{% extends BASE_TEMPLATE %}
+
+{% block css %}
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}assets/css/form.min.css">#}
+{#    <link rel="stylesheet" href="{{ STATIC_URL }}core/announcement/css/custom.css">#}
+{% endblock %}
+
+{% block content %}
+    <section id="main">
+        <section id="content" class="content-alt">
+            <div class="container">
+
+                {#------------DataTable--------------#}
+                <div class="row" id="read">
+                    <div class="col-md-12">
+                        <div class="card">
+                            {% set icons =  '
+                        <li>
+                            <a href="#">
+                                <i class="zmdi zmdi-info" id="summary_button" title="Details "></i>
+                            </a>
+                        </li>
+                        <li class="hidden">
+                            <a href="#">
+                                <i class="zmdi zmdi-delete" id="delete_button" title="Delete "></i>
+                            </a>
+                        </li>' %}
+
+                            {% with icons=icons, table_id='announcemet_list', table_header='Announcement List',
+                search_title='Search' %}
+                                {% include 'core/datatable.html' %}
+                            {% endwith %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
