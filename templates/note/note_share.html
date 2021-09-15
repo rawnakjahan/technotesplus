@@ -35,28 +35,18 @@
                     {% set icons = '
                     <li>
                         <a href="#">
-                            <i class="zmdi zmdi-plus-circle-o-duplicate c-black" id="add_stock_button" title="Add Note"></i>
+                            <i class="zmdi zmdi-plus-circle-o-duplicate c-black" id="add_stock_button" title="Add Share"></i>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="zmdi zmdi-edit" id="edit_stock_button" title="Edit Note"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/note/share/">
-                            <i class="zmdi zmdi-account c-black" id="share_stock_button" title="Share Note"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="zmdi zmdi-delete" id="delete_stock_button" title="Delete Note"></i>
+                            <i class="zmdi zmdi-delete" id="delete_stock_button" title="Delete Share"></i>
                         </a>
                     </li>
 
                 ' %}
 
-                    {% with icons=icons, table_id='stock_list', table_header='Note List', search_title='Search Note' %}
+                    {% with icons=icons, table_id='stock_list', table_header='Share List', search_title='' %}
                         {% include 'core/datatable.html' %}
                     {% endwith %}
                 </div>
@@ -74,31 +64,31 @@
                             <div class="row">
                                 <div class="col-md-12 m-t-20">
                                     <div class="form-group">
-                                        <div class="fg-line">
-                                            <label class="control-label">Title <span
-                                                    class="required_star"> *</span></label>
-                                            <input type="text"
-                                                   name="title"
-                                                   id="note_title"
-                                                   class="form-control"
-                                                   data-parsley-trigger="change"
-                                                   data-parsley-required="">
-                                        </div>
+                                        <label class="control-label">Note<span
+                                                class="required_star">*</span></label>
+                                        <select class="selectpicker"
+                                                tabindex="10"
+                                                data-live-search="true"
+                                                name="note"
+                                                data-parsley-required="">
+                                            <option value="">Nothing Selected</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group ">
-                                        <div class="fg-line">
-                                            <label class="control-label">Content <span
-                                                    class="required_star">*</span></label>
-                                            <textarea class="form-control"
-                                                      name="content"
-                                                      id="note_content"
-                                                      required
-                                                      data-parsley-trigger="change"></textarea>
-                                        </div>
+                                <div class="col-md-12 m-t-20">
+                                    <div class="form-group">
+                                        <label class="control-label">User<span
+                                                class="required_star">*</span></label>
+                                        <select class="selectpicker"
+                                                tabindex="10"
+                                                data-live-search="true"
+                                                name="user"
+                                                data-parsley-required="">
+                                            <option value="">Nothing Selected</option>
+                                        </select>
                                     </div>
                                 </div>
+
                                 <div class="col-md-6" style="display: none">
                                     <div class="form-group">
                                         <div class="fg-line">
@@ -149,10 +139,10 @@
 
 {% block js %}
     <script type="text/javascript">
-        let toner_stock_api = "{{ url('api:note-list') }}";
+        let toner_stock_api = "{{ url('api:note_share-list') }}";
     </script>
     <script type="text/javascript" src="{{ STATIC_URL }}/core/js/form.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}/core/js/crud_common.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}/note/note_crud.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}/note/note_share_crud.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}/core/js/doT.js></script>
 {% endblock %}

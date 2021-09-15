@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'TecNotesPlus.auth.ModelBackend.AccountsMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -117,6 +118,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGIN_EXEMPT_URLS = (
+    r'^api/*',
+)
+
+# for global authentication
+AUTHENTICATION_BACKENDS = [
+    'TecNotesPlus.auth.ModelBackend.EmailOrUsernameModelBackend',
+    # 'django_python3_ldap.auth.LDAPBackend',  # for ldap authentication
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -146,6 +157,8 @@ TEMPLATES = [
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 
+LOGIN_URL = '/login/'
+
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 # REPO = os.path.join(BASE_DIR, 'media/repository')
@@ -156,6 +169,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
 # STATIC_ROOT=BASE_DIR.as_posix()+ "static"
 # MEDIA_ROOT=BASE_DIR.as_posix()+ "media"
 

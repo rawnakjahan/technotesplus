@@ -1,19 +1,10 @@
-from django.conf.urls import url, include
-from rest_framework.routers import DefaultRouter
-
-
-
-from TecNotesPlus import settings
+from django.conf.urls import url
 from .views import *
 
-app_name = 'announcement'
-
-router = DefaultRouter()
-router.register('api', NoteViewSet, basename='api')
+app_name = 'note'
 
 urlpatterns = [
     url(r'^view/$', NoteView.as_view(), name='view'),
-
-    url(r'^', include(router.urls)),
+    url(r'^share/$', NoteShareView.as_view(), name='share'),
 ]
 

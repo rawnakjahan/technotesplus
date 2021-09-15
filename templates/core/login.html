@@ -1,0 +1,45 @@
+{% extends BASE_TEMPLATE %}
+
+{% block content %}
+    <div class="login-content">
+    <!-- Login -->
+    <div class="lc-block toggled" id="l-login">
+{#        {% if WORKFLOW == 'aBX3RODumf' %}#}
+{#            <img src="{{ STATIC_URL }}img/robo_logo.png" width="250px" alt="" style="top: -15px !important;position: relative;">#}
+{#        {% else %}#}
+{#            <img src="{{ STATIC_URL }}assets/images/green_office_1.png" alt=""#}
+{#                 style="top: -15px !important;position: relative;">#}
+{#        {% endif %}#}
+        <form id="login_form">
+            <div class="lcb-form">
+                <div class="input-group m-b-20">
+                    <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+                    <div class="fg-line">
+                        <input type="text" name="username" class="form-control" placeholder="Username/Email">
+                    </div>
+                </div>
+
+                <div class="input-group m-b-20">
+                    <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+                    <div class="fg-line">
+                        <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
+                    </div>
+                </div>
+
+                <button class="btn btn-login btn-success btn-float" type="submit" style="margin-top: -80px !important;"><i
+                        class="zmdi zmdi-arrow-forward"></i></button>
+            </div>
+        </form>
+        <br>
+        <br>
+        </div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+        let login_url = "{{ url('api:login') }}";
+        let dashboard_url = "{{ url('note:view') }}";
+    </script>
+    <script type="text/javascript" src="{{ STATIC_URL }}assets/js/auth.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}/core/auth/js/app/application.js"></script>
+{% endblock %}

@@ -62,8 +62,9 @@
 </head>
 
 <body>
-
-<!— Render content —>
+{% if request.user.is_authenticated %}
+    {% include 'core/navbar.html' %}
+{% endif %}
 {% block content %}
 
 {% endblock %}
@@ -71,6 +72,7 @@
 
 <!— Common JS —>
 <script src="{{ STATIC_URL }}core/js/common.min.js"></script>
+<script src="{{ STATIC_URL }}core/js/sweetalert2.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}core/js/datatable.min.js"></script>
 
 <!— Page JS —>
