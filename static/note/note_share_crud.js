@@ -1,5 +1,4 @@
 {
-    console.log("YESY")
     let $table = $('#stock_list'),
         $add_stock_button = $('#add_stock_button'),
         $edit_stock_button = $('#edit_stock_button'),

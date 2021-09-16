@@ -16,13 +16,13 @@
                         </span>
                     </a>
                     <ul class="dropdown-menu dm-icon pull-right" style="width: 200px">
+{#                        <li>#}
+{#                            <a href="/update_profile/{{ request.user.id }}" class="user_profile">#}
+{#                                <i class="zmdi zmdi-account-circle"></i> My Profile#}
+{#                            </a>#}
+{#                        </li>#}
                         <li>
-                            <a href="/update_profile/{{ request.user.id }}" class="user_profile">
-                                <i class="zmdi zmdi-account-circle"></i> My Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="change_pass"><i class="zmdi zmdi-key"></i> Change password</a>
+                            <a href="#" class="change_pass"><i class="zmdi zmdi-account-circle"></i> My Profile</a>
                         </li>
 
                         <li>
@@ -391,9 +391,4 @@
     </div>
 </div>
 
-<script>
-    var DMS = "{{ DMS }}";
-    var WORKFLOW = "{{ WORKFLOW }}";
-    var SHOW_SELECTPICKER_DOC_TYPE_DROPDOWN = "{{ SHOW_SELECTPICKER_DOC_TYPE_DROPDOWN }}";
-</script>
 

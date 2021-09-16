@@ -50,7 +50,6 @@
                 targets: 1,
                 width: "50%",
                 "render": (data, a, b) => {
-                    console.log("status", b.id, b.seen_status)
                     if (b.seen_status === false) {
                         return '<a href="#" id="make_seen" title="Click to See More" data-note_id="' + b.id + '" ' +
                             'class="btn-warning p-5 p-l-10 p-r-10 zmdi zmdi-eye f-20"></a>'

@@ -17,14 +17,12 @@ $(document).on('click', '.change_pass', function () {
     $('#change_pass').modal();
     $('#password_save').on('click', function (e) {
         e.preventDefault();
-        console.log("ok");
         var pass_form_parsley = $("#change_pass_form").parsley();
         pass_form_parsley.validate();
         if (!pass_form_parsley.isValid()) {
             return;
         }
         var $form = new FormData($('#change_pass_form')[0]);
-        console.log($form);
         $.ajax({
             method: "PATCH",
             processData: false,
@@ -33,7 +31,6 @@ $(document).on('click', '.change_pass', function () {
             data: $form,
             url: '/api/change_password/',
             success: function (res) {
-                console.log(res);
                 $("#change_pass").modal('hide');
                 notify('', 'Password changed successfully', '', 'success', 2000);
                 setTimeout(function () {

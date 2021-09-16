@@ -53,7 +53,6 @@ class NoteViewSet(CustomViewSetForQuerySet):
         queryset = super().get_queryset()
         shared_note_ids = NoteShare.objects.filter(shared_with=self.request.user).distinct().values_list('note_id',
                                                                                                          flat=True)
-        print("shared_note_ids", shared_note_ids)
         queryset = queryset.filter(Q(created_by=self.request.user) | Q(id__in=shared_note_ids))
         return queryset
 
@@ -148,7 +147,6 @@ class NoteView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(NoteView, self).get_context_data(**kwargs)
         context['user_list'] = User.objects.all()
-        print(context['user_list'])
         return context
 
 

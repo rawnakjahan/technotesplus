@@ -86,7 +86,6 @@ EMAIL_USE_TLS = True
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-print(BASE_DIR.as_posix() +'db.sqlite3')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
