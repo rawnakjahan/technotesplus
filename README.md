@@ -15,7 +15,7 @@ virtualenv -p python3 venv --no-site-packages
 3. Go to project folder
 4. Activate the virtualenv on ubuntu.
 ```
-venv/Scripts/activate
+source venv/bin/activate
 ```
 5. Install requirements 
 ```
