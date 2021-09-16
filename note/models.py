@@ -14,8 +14,12 @@ class NOTE(models.Model):
 
 
 class NoteShare(models.Model):
-    note = models.ForeignKey(NOTE, on_delete=models.PROTECT, null=False, blank=False)
+    note = models.ForeignKey(NOTE, on_delete=models.PROTECT, null=False, blank=False, related_name='share')
     shared_with = models.ForeignKey(User, on_delete=models.PROTECT, null=False, blank=False)
     status = models.BooleanField(default=0, null=False, blank=False)
     created_at = models.DateTimeField(null=True, blank=True, auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, auto_now_add=False)
+
+    class Meta:
+        unique_together = (('note', 'shared_with'),)
+

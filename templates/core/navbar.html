@@ -350,7 +350,7 @@
                                 <div class="fg-line">
                                     <label class="fg-label">Old Password<span class="required_star">*</span></label>
                                     <input class="form-control" id="old_password" type="password"
-                                           name="old_password" autocomplete=off
+                                           name="old_password"
                                            data-parsley-required
                                            data-parsley-required-message="You can not keep it blank">
                                 </div>
@@ -361,12 +361,9 @@
                                 <div class="fg-line">
                                     <label>New Password<span class="required_star">*</span></label>
                                     <input class="form-control" id="new_password" type="password"
-                                           name="new_password" autocomplete=off
+                                           name="new_password"
                                            data-parsley-required
-                                           data-parsley-trigger="change"
-                                           data-parsley-required-message="You can not keep it blank"
-                                           data-parsley-pattern="{{PASSWORD_VALIDATION_PATTERN}}"
-                                           data-parsley-error-message="{{PASSWORD_VALIDATION_ERROR_MSG}}">
+                                           data-parsley-required-message="You can not keep it blank">
                                 </div>
                             </div>
                         </div>
@@ -375,13 +372,11 @@
                                 <div class="fg-line">
                                     <label>Confirm Password<span class="required_star">*</span></label>
                                     <input class="form-control" id="confirm_password" type="password"
-                                           name="confirm_password" autocomplete=off
+                                           name="confirm_password"
                                            data-parsley-required
                                            data-parsley-equalto="#new_password"
-                                           data-parsley-trigger="change"
                                            data-parsley-required-message="You can not keep it blank"
-                                           data-parsley-equalto-message="These passwords don't match"
-                                           data-parsley-pattern="{{PASSWORD_VALIDATION_PATTERN}}">
+                                           data-parsley-equalto-message="These passwords don't match">
                                 </div>
                             </div>
                         </div>

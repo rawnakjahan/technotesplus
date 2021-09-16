@@ -74,6 +74,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'TecNotesPlus.wsgi.application'
 
+# Mail config
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+# EMAIL_HOST_USER = 'infosapex2@gmail.com'
+# EMAIL_HOST_PASSWORD = 'info123456'
+EMAIL_HOST_USER = 't8840889@gmail.com'
+EMAIL_HOST_PASSWORD = 'azsxdc1q2w3e'
+EMAIL_USE_TLS = True
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

@@ -19,13 +19,13 @@
     <link href="{{ STATIC_URL }}core/css/shadow.css" rel="stylesheet">
 
     <style>
-    .login-content {
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-color: white;
-    }
+        .login-content {
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: white;
+        }
 
         {#::-webkit-scrollbar {#}
         {#    display: none;#}
@@ -50,12 +50,13 @@
 
         {# date picker#}
         .bootstrap-datetimepicker-widget.dropdown-menu {
-            top: 35px!important;
+            top: 35px !important;
         }
 
-        .date-time-picker + .bootstrap-datetimepicker-widget.dropdown-menu{
-            top: 50px!important;
+        .date-time-picker + .bootstrap-datetimepicker-widget.dropdown-menu {
+            top: 50px !important;
         }
+
         {# /date picker#}
     </style>
 
@@ -78,12 +79,14 @@
 <!— Page JS —>
 <script>
     var userId = "{{ request.user.id }}";
+
 </script>
 
 
 {% block js %}{% endblock %}
 
 <script src="{{ STATIC_URL }}core/js/theme_app.min.js"></script>
+<script src="{{ STATIC_URL }}/core/auth/js/app/chang_password.js"></script>
 
 
 </body>

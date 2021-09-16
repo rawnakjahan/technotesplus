@@ -44,8 +44,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/note/share/">
-                            <i class="zmdi zmdi-account c-black" id="share_stock_button" title="Share Note"></i>
+                        <a href="">
+                            <i class="zmdi zmdi-account" id="share_stock_button" title="Share Note"></i>
                         </a>
                     </li>
                     <li>
@@ -55,7 +55,6 @@
                     </li>
 
                 ' %}
-
                     {% with icons=icons, table_id='stock_list', table_header='Note List', search_title='Search Note' %}
                         {% include 'core/datatable.html' %}
                     {% endwith %}
@@ -123,7 +122,60 @@
                 </div>
             </div>
         </div>
+        <!-- Share modal -->
+        <div class="modal fade" id="stock_share_modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="zmdi zmdi-account-box m-r-10"></i> <span></span> Note</h4>
+                    </div>
+                    <form id="stock_share_form" method="post">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12 m-t-20">
+                                    <div class="form-group">
+                                        <label class="control-label">Shared With<span
+                                                class="required_star">*</span></label>
+                                        <select class="selectpicker"
+                                                id="user_list"
+                                                tabindex="10"
+                                                data-live-search="true"
+                                                name="shared_with"
+                                                data-parsley-required="">
+                                            <option value="">Nothing Selected</option>
+                                            {% for user in user_list %}
+                                                {% if user.id != request.user.id %}
+                                                <option value="{{ user.id }}">{{ user.username }}</option>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
 
+                                <div class="col-md-6" style="display: none">
+                                    <div class="form-group">
+                                        <div class="fg-line">
+                                            <label class="control-label">Note ID <span
+                                                    class="required_star"> *</span></label>
+                                            <input type="text"
+                                                   name="note"
+                                                   class="form-control"
+                                                   value=""
+                                                   data-parsley-required="" hidden>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn bgm-bluegray waves-effect" id="share_submit_button">Share</button>
+                            <button type="button" class="btn bgm-gray waves-effect" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <!-- Delete Confirmation modal -->
         <div class="modal fade positive_modal">
             <div class="modal-dialog" role="document">
@@ -150,6 +202,8 @@
 {% block js %}
     <script type="text/javascript">
         let toner_stock_api = "{{ url('api:note-list') }}";
+        let note_share_api = "{{ url('api:note_share-list') }}";
+        {#let note_status_update_api = "{{ url('api:update_status') }}";#}
     </script>
     <script type="text/javascript" src="{{ STATIC_URL }}/core/js/form.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}/core/js/crud_common.js"></script>
