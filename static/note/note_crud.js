@@ -1,4 +1,12 @@
 {
+
+    /*------- ajax call loader ------*/
+    $(document).bind("ajaxSend", function () {
+        $('.loader').show();
+    }).bind("ajaxStop", function () {
+        $('.loader').hide();
+    });
+
     let $table = $('#stock_list'),
         $add_stock_button = $('#add_stock_button'),
         $edit_stock_button = $('#edit_stock_button'),
@@ -44,7 +52,8 @@
                 "render": (data, a, b) => {
                     console.log("status", b.id, b.seen_status)
                     if (b.seen_status === false) {
-                        return '<a href="#" id="make_seen" data-note_id="' + b.id + '" class="btn-warning p-5 p-l-10 p-r-10 zmdi zmdi-eye f-20"></a>'
+                        return '<a href="#" id="make_seen" title="Click to See More" data-note_id="' + b.id + '" ' +
+                            'class="btn-warning p-5 p-l-10 p-r-10 zmdi zmdi-eye f-20"></a>'
                     } else {
                         return data
                     }

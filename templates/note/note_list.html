@@ -30,6 +30,11 @@
 {% block content %}
     {% if request.user.is_authenticated %}
         <section id="main">
+        <div class="loader">
+            <center>
+                <img class="loading-image" src="{{ STATIC_URL }}img/ajax-loader/ajax-loader (1).gif" alt="Loading..">
+            </center>
+        </div>
             <section id="content" class="content-alt">
                 <div class="container">
                     {% set icons = '

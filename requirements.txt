@@ -1,5 +1,9 @@
 Django==2.2
-djangorestframework==3.12.4
-Jinja2==2.10.1
 django-debug-toolbar==1.10.1
-djangorestframework-simplejwt==4.3.0
+djangorestframework==3.12.4
+djangorestframework-simplejwt==4.4.0
+Jinja2==2.10.1
+MarkupSafe==2.0.1
+PyJWT==1.7.1
+pytz==2021.1
+sqlparse==0.4.2

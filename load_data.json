@@ -1,0 +1,79 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$HyaeBhwsGnnW$OJc76STgIkYoyUi8hE29cLaVYzWY+m1g2iKmI97Ede0=",
+      "last_login": "2021-09-16 07:56:47.184420",
+      "is_superuser": 1,
+      "username": "admin",
+      "first_name": "",
+      "email": "rawnakjahan41@gmail.com",
+      "is_staff": 1,
+      "is_active": 1,
+      "date_joined": "2021-09-13 02:29:11",
+      "last_name": ""
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$koTyspCinzjB$PjqFYV4UO41edikE+wLXHOIaHajTTl3mXftMVDcer04=",
+      "last_login": "2021-09-16 07:42:15.720771",
+      "is_superuser": 0,
+      "username": "rawnak",
+      "first_name": "",
+      "email": "t8840889@gmail.com",
+      "is_staff": 0,
+      "is_active": 1,
+      "date_joined": "2021-09-14 16:28:22",
+      "last_name": ""
+    }
+  },
+  {
+    "model": "note.note",
+    "pk": 1,
+    "fields": {
+      "id": 1,
+      "title": "Meeting with DBL",
+      "content": "As discussed in zoom meeting, we have summarized our observations regarding DMS software. You are requesting to solve the above mentioned issues as early as possible.\r\n\r\nYour co-operation is highly appreciated in this regard.",
+      "created_at": "2021-09-16 10:20:28.091227",
+      "updated_at": "2021-09-16 10:20:28.091275",
+      "created_by_id": 1
+    }
+  },
+  {
+    "model": "note.note",
+    "pk": 2,
+    "fields": {
+      "title": "Unable to fetch invoice",
+      "content": "As discussed in today's meeting, please completely remove the GR number as an input for fetching invoice document number.",
+      "created_at": "2021-09-16 10:21:27.935440",
+      "updated_at": "2021-09-16 10:21:27.935533",
+      "created_by_id": 1
+    }
+  },
+  {
+    "model": "note.note",
+    "pk": 3,
+    "fields": {
+      "title": "API Details Note",
+      "content": "This API is responsible to store files from local storage to server storage. It converts image files & doc files to PDF and excel files to CSV.",
+      "created_at": "2021-09-16 10:24:08.792147",
+      "updated_at": "2021-09-16 10:24:08.792211",
+      "created_by_id": 2
+    }
+  },
+  {
+    "model": "note.noteshare",
+    "pk": 3,
+    "fields": {
+      "status": 0,
+      "created_at": "2021-09-16 10:24:28.601153",
+      "updated_at": "2021-09-16 10:24:28.601207",
+      "shared_with_id": 1,
+      "note_id": 3
+    }
+  }
+]
