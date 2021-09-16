@@ -10,10 +10,14 @@ Basic django structure with Login, Logout, Pagination, JWT
 1. Clone the repository.
 2. Create virtual environment. 
 ```
-virtualenv -p python3 envname --no-site-packages
+virtualenv -p python3 venv --no-site-packages
 ```
 3. Go to project folder
-4. Install requirements 
+4. Activate the virtualenv on ubuntu.
+```
+venv/Scripts/activate
+```
+5. Install requirements 
 ```
 pip install -r requirements.txt
 ```
@@ -29,17 +33,17 @@ python manage.py loaddata load_data.json
 ```
 python manage.py runserver
 ```
-7. Login using Credential 
+8.Login using Credential 
 ```
 username: admin
 password: 1q2w3e
 ```
-    or
+or
 ```
 username: rawnak
 password: 1q2w3e
 ```
-8. To send mail as a notification to the user to remind them to see shared note.
+9.To send mail as a notification to the user to remind them to see shared note.
 ```
 python manage.py sendremindernotification
 ```
