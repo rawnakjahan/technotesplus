@@ -1,0 +1,82 @@
+{
+	"id": "02dbdbfe-8136-432d-a341-e570ac4bcd64",
+	"name": "TechNote",
+	"description": "",
+	"order": [
+		"170792ee-51f4-011c-b753-663c99f8d141",
+		"7cd226cd-2e38-c095-b381-7783d0472303"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1631773073967,
+	"owner": "1409737",
+	"public": false,
+	"requests": [
+		{
+			"id": "170792ee-51f4-011c-b753-663c99f8d141",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1:8000/api/token/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "1q2w3e",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1631776242054,
+			"name": "Get jwt token",
+			"description": "",
+			"collectionId": "02dbdbfe-8136-432d-a341-e570ac4bcd64",
+			"responses": []
+		},
+		{
+			"id": "7cd226cd-2e38-c095-b381-7783d0472303",
+			"headers": "Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxODMwMzQ4LCJqdGkiOiIwMDQ2OGU5M2IwNGI0YjIyYmI3ZTg4MzgzZjFlZGJjMSIsInVzZXJfaWQiOjF9._ZFVrYJVI2Vfzbah_yeKiGUaIg4uuqoWP4CqoZKNR3Q\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxODMwMzQ4LCJqdGkiOiIwMDQ2OGU5M2IwNGI0YjIyYmI3ZTg4MzgzZjFlZGJjMSIsInVzZXJfaWQiOjF9._ZFVrYJVI2Vfzbah_yeKiGUaIg4uuqoWP4CqoZKNR3Q",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://127.0.0.1:8000/api/note",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1631801595907,
+			"name": "Get Note List",
+			"description": "",
+			"collectionId": "02dbdbfe-8136-432d-a341-e570ac4bcd64",
+			"responses": []
+		}
+	]
+}

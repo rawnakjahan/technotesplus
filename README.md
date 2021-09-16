@@ -47,3 +47,5 @@ password: 1q2w3e
 ```
 python manage.py sendremindernotification
 ```
+
+10. To get JWT token api import the file "TechNote.postman_collection.json" to the Postman
