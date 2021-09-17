@@ -25,24 +25,16 @@ pip install -r requirements.txt
 ```
 python manage.py migrate
 ```
-6. Load Data 
-```
-python manage.py loaddata load_data.json
-```
-7.Run project 
+6.Run project 
 ```
 python manage.py runserver
 ```
-8.Login using Credential 
+7.Load Data 
 ```
-username: admin
-password: 1q2w3e
+python manage.py loaddata load_data.json
 ```
-or
-```
-username: rawnak
-password: 1q2w3e
-```
+8.Login using Credential are give in file user_credential.txt
+
 9.To send mail as a notification to the user to remind them to see shared note.
 ```
 python manage.py sendremindernotification
